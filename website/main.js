@@ -50,6 +50,8 @@ function loadPasswords(){
 		console.log(el.getElementsByTagName( 'pre' )[0]); // Live NodeList of your anchor elements
 
 	});*/
+	setPassword();
+	console.log("Starting to fetch.");
 	fetch(url, {
 		headers: {
 			"Access-Control-Allow-Origin": '*',
@@ -58,10 +60,10 @@ function loadPasswords(){
 	})
 		.then(response => response.text())
 		.then(text => {
+			console.log("Ended fetch.");
 			el = document.createElement( 'html' );
 			el.innerHTML = text;
 			let json = JSON.parse(el.getElementsByTagName( 'body' )[0].innerHTML);
-			console.log(json);
 			createTableFromInfo(json);
 		});
 }
