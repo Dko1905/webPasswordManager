@@ -1,0 +1,18 @@
+table{
+	width: 20%;
+	height: 60%;
+}
+
+table, tr, td{
+	border: 1px solid black;
+	width: auto;
+}
+
+button{
+	width: 150px;
+	height: 25px;
+}
+
+input{
+	width: 146px;
+}

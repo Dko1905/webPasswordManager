@@ -1,0 +1,28 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+
+	<title>JSON editor</title>
+	<meta name="author" content="Daniel Florescu">
+	<script src="aes.js"></script>
+</head>
+
+<body>
+	Password:<input type="text" id="password-box"></input><br><button type="button" onclick="setPassword()">Set password</button><br>
+
+	JSON:<br><textarea id="json-box" style="width: 500px; height: 300px;"></textarea><br>
+	<button type="button" onclick="setJson()">Set Json</button>
+
+	<br>
+	<br>
+	Website:<input type="text" id="website"></input><br>
+	Email:<input type="text" id="email"></input><br>
+	Password:<input type="text" id="password"></input><br>
+	Extra:<input type="text" id="extra"></input><br>
+	<button type="button" onclick="addJson()">Add</button>
+
+	<script src="main.js"></script>
+</body>
+</html>
