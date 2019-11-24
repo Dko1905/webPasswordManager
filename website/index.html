@@ -17,9 +17,29 @@
 </head>
 
 <body>
-	<input type="password" id="password-box"></input>
-	<br>
-	<button type="button" onclick="loadPasswords();">Load!</button>
+	<table>
+		<tr>
+			<td>Username:</td>
+			<td><input type="text" class="inputBox" id="username-box"></input></td>
+		</tr>
+		<tr>
+			<td>Password:</td>
+			<td><input type="password" id="password-box"></td>
+		</tr>
+		<tr>
+			<td>Encryption Password:</td>
+			<td><input type="password" id="encryption-password-box"></input></td>
+		</tr>
+		<tr>
+			<td><button type="button" onclick="setToken();">Get Token</button></td>
+			<td><button type="button" onclick="loadPasswords();">Load</button></td>
+		</tr>
+		<tr>
+			<td></td>
+			<td><button type="button" onclick="savePasswords();">Save</button></td>
+		</tr>
+	</table>
+	<br><br>
 	<div id="content">
 		<table id="table">
 			<tr>
@@ -30,6 +50,6 @@
 			</tr>
 		</table>
 	</div>
-	<script src="main.js"></script>
+	<script src="index.js"></script>
 </body>
 </html>

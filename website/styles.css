@@ -1,4 +1,4 @@
-table{
+.inputBox{
 	width: 20%;
 	height: 60%;
 }
@@ -11,6 +11,9 @@ table, tr, td{
 button{
 	width: 150px;
 	height: 25px;
+}
+button:active{
+	background-color: pink;
 }
 
 input{
