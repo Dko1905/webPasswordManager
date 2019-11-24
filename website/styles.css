@@ -1,4 +1,4 @@
-.inputBox{
+table{
 	width: 20%;
 	height: 60%;
 }
@@ -16,6 +16,6 @@ button:active{
 	background-color: pink;
 }
 
-input{
+.inputBox{
 	width: 146px;
 }
