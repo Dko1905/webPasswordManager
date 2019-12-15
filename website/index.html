@@ -9,47 +9,49 @@
 	<meta http-equiv="Pragma" content="no-cache" />
 	<meta http-equiv="Expires" content="0" />
 
-	<title>Password Manager</title>
+	<title>Password Manager Login</title>
 	<meta name="description" content="Just a password manager.">
 	<meta name="author" content="Daniel Florescu">
-	<script src="aes.js"></script>
 	<link rel="stylesheet" href="styles.css?v=1.0">
+	<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+	<script src="jquery.js"></script>
 </head>
 
 <body>
-	<table>
-		<tr>
-			<td>Username:</td>
-			<td><input type="text" class="inputBox" id="username-box"></input></td>
-		</tr>
-		<tr>
-			<td>Password:</td>
-			<td><input type="password" id="password-box"></td>
-		</tr>
-		<tr>
-			<td>Encryption Password:</td>
-			<td><input type="password" id="encryption-password-box"></input></td>
-		</tr>
-		<tr>
-			<td><button type="button" onclick="setToken();">Get Token</button></td>
-			<td><button type="button" onclick="loadPasswords();">Load</button></td>
-		</tr>
-		<tr>
-			<td></td>
-			<td><button type="button" onclick="savePasswords();">Save</button></td>
-		</tr>
-	</table>
-	<br><br>
-	<div id="content">
-		<table id="table">
+	<div id="loginDiv">
+		<table>
 			<tr>
-				<td id="a1">Website</td>
-				<td id="b1">Email</td>
-				<td id="c1">Password</td>
-				<td id="d1">Extra</td>
+				<td>Username:</td>
+				<td><input type="text"id="username-box"></input></td>
+			</tr>
+			<tr>
+				<td>Password:</td>
+				<td><input type="password" id="password-box"></td>
+			</tr>
+			<tr>
+				<td>Encryption Password:</td>
+				<td><input type="password" id="encryption-password-box"></input></td>
 			</tr>
 		</table>
+		<button type="button" class="w3-button w3-blue w3-padding-small w3-round w3-hover-indigo" onclick="setToken();">Get Token</button>
+		<button type="button" class="w3-button w3-blue w3-padding-small w3-round w3-hover-indigo" onclick="loadPasswords();">Load</button>
 	</div>
+
+	<br><br><br>
+
+	<div id="mainContent">
+		<div id="leftPanel">
+			<input type="text" placeholder="Search here" id="searchInput"></input>
+			<ul id="accountList"> 
+			</ul>
+		</div>
+		<div id="rightPanel">
+			<p>Hello world</p>
+			<p>Hello world</p>
+			<p>Hello world</p>
+		</div>
+	</div>
+
 	<script src="index.js"></script>
 </body>
 </html>

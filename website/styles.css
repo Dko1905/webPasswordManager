@@ -1,21 +1,89 @@
-table{
-	width: 20%;
-	height: 60%;
-}
-
-table, tr, td{
-	border: 1px solid black;
-	width: auto;
+body{
+	background-image: url("background.jpg");
 }
 
 button{
-	width: 150px;
-	height: 25px;
-}
-button:active{
-	background-color: pink;
+	-o-transition:.5s;
+  -ms-transition:.5s;
+  -moz-transition:.5s;
+  -webkit-transition:.5s;
+  /* ...and now for the proper property */
+	transition:.5s;
 }
 
-.inputBox{
-	width: 146px;
+#loginDiv{
+	margin-left:auto; 
+	margin-right:auto;
+	text-align: center;
+	background-color: white;
+	border: 2px solid lightblue;
+	width: 425px;
+	margin-top: 20%;
+
+	border-radius:8px;
+	-moz-border-radius:8px;
+}
+
+#mainContent{
+	margin-left: 15%;
+	margin-right: 15%;
+	background-color: rgba(51, 51, 51, 0.7);
+
+	
+	border-radius:8px;
+	-moz-border-radius:8px;
+}
+
+
+#leftPanel{
+	width: 400px;
+	display: inline-block;
+	padding-left: 20px;
+}
+
+#rightPanel{
+	background-color: beige;
+	display: inline-block;
+	right: 0px;
+	top: 0px;
+}
+
+#searchInput{
+	margin-top: 20px;
+	width: 380px;
+}
+
+#accountList{
+	background-color: white;
+	border-radius:8px;
+	-moz-border-radius:8px;
+	list-style-type: none;
+	padding-left: 2px;
+	color: black;
+	height: 700px;
+	overflow-y: scroll;
+}
+
+#listElement{
+	-o-transition:.5s;
+  -ms-transition:.5s;
+  -moz-transition:.5s;
+  -webkit-transition:.5s;
+  /* ...and now for the proper property */
+	transition:.5s;
+	
+	border-radius: 5px;
+}
+
+#listElement:hover{
+	background-color: lightblue;
+}
+
+table{
+	margin-left:auto; 
+	margin-right:auto;
+}
+
+.hide{
+	display: none;
 }
