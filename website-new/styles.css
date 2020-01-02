@@ -1,0 +1,27 @@
+body{
+	background-image: url("https://3.bp.blogspot.com/-ijiBhpsH70w/WoEkEw4nouI/AAAAAAACIps/q25jwIcjzbEDbVlpGtgvCLdFXMWILtSAQCEwYBhgL/s1600/Communist%2Bhammer%2BGif.gif");
+}
+
+#loginDiv{
+	width: 200px;
+	height: auto;
+	padding-bottom: 10px;
+	background-color: darkblue;
+	color: white;
+	padding-left: 10px;
+	padding-top: 5px;
+	margin:0 auto;
+	border-radius: 15px;
+}
+
+#dataDiv{
+	width: 780px;
+	height: auto;
+	background-color: lightblue;
+	border-radius: 10px;
+	margin:0 auto;
+}
+td {
+	color: white;
+}
+

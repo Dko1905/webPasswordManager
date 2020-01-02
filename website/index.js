@@ -5,6 +5,7 @@ function getIcon(url = ''){
 }
 
 function addToList(website = '', username = '', last = false){
+	list.push({website:website, username:username, password:username})
 	//var tempalte = `<li> <table style="margin-left:2px; margin-top:auto;"> <tr> <td><img src=${imgUrl} style="width: 30px; heigh:30px;"></img></td> <td><h2 style="font-weight: bold;">Hello</h2></td> </tr> </table> </li>`;
 	
 	let listElementBody = document.createElement('li');
@@ -90,25 +91,60 @@ function addToList(website = '', username = '', last = false){
 	}
 }
 
-function post(url = '', input = ''){
+function post(url = '', input = '', callback = (result = '')=>{}){
 	var xhr = new XMLHttpRequest();
 	xhr.open('POST', url, true);
 	xhr.setRequestHeader('Content-Type', 'text/plain');
-	xhr.setRequestHeader('Access-Control-Allow-Origin', '*');
 	xhr.send(input);
 	xhr.onreadystatechange = () => {
 		if(xhr.readyState != 4)
 			return;
 		if(xhr.status == 200){
-			console.log(xhr.responseText)
+			callback(xhr.responseText)
 		}
 	};
 
 }
 
+let token = {tokenString: '', experationDate: 0};
+let hastoken = false;
+let list = [];
+
 function getToken(){
-	let param = `{"account":{"username":"daniel","password":"password","attachedTokens":[]}}`
-	post("http://127.0.0.1:8080/gettoken", param);
+	let param = JSON.stringify({username:$('#username-box').val(), password:$('#password-box').val()});
+	post("https://daniel-password-server.herokuapp.com/gettoken", param, (result)=>{
+		let res = JSON.parse(result);
+		console.log(res);
+		if(res.error){
+			alert('Error in getting token, username or password possibly wrong.');
+			return;
+		}
+		token = res.token;
+		hastoken = true;
+		alert('Got the token.');
+	});
+}
+function setData(data = ''){
+	let param = JSON.stringify({tokenString:token.tokenString, experationDate:token.experationDate, data: data});
+	post("https://daniel-password-server.herokuapp.com/setdata", param, (result)=>{
+		console.log(result);
+		let res = JSON.parse(result);
+		if(res.error){
+			alert(`Error in writing to file. (${res.errorMessage})`);
+			return;
+		}
+	});
+}
+function getData(){
+	let param = JSON.stringify({tokenString:token.tokenString, experationDate:token.experationDate});
+	post("https://daniel-password-server.herokuapp.com/getdata", param, (result)=>{
+		console.log(result);
+		let res = JSON.parse(result);
+		if(res.error){
+			alert(`Error in reading from file. (${res.errorMessage})`);
+			return;
+		}
+	});
 }
 
 function loadPasswords(){
@@ -117,12 +153,12 @@ function loadPasswords(){
 
 	addToList('www.google.com', 'Daniel.florescu1905@yahoo.com', false);
 	addToList('www.skype.com', 'Daniel.florescu1905@yahoo.com', false);
-	addToList('skole.com', 'Daniel.florescu1905@yahoo.com', false);
-	addToList('skole.com', 'Daniel.florescu1905@yahoo.com', false);
-	addToList('skole.com', 'Daniel.florescu1905@yahoo.com', false);
-	addToList('skole.com', 'Daniel.florescu1905@yahoo.com', false);
-	addToList('skole.com', 'Daniel.florescu1905@yahoo.com', false);
-	addToList('skole.com', 'Daniel.florescu1905@yahoo.com', false);
+	addToList('y8.com', 'Daniel.florescu1905@yahoo.com', false);
+	addToList('y8.com', 'Daniel.florescu1905@yahoo.com', false);
+	addToList('y8.com', 'Daniel.florescu1905@yahoo.com', false);
+	addToList('y8.com', 'Daniel.florescu1905@yahoo.com', false);
+	addToList('y8.com', 'Daniel.florescu1905@yahoo.com', false);
+	addToList('y8.com', 'Daniel.florescu1905@yahoo.com', false);
 	addToList('work.com', 'dako1905', true);
 }
 

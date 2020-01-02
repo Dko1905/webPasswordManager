@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+
+<html lang="en-US">
+
+<head>
+	<meta charset="utf-8"/>
+	<META http-equiv="CACHE-CONTROL" content="NO-CACHE">
+	<title>Cool webpage</title>
+
+	<script src="aes.js"></script>
+	<link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+
+<body>
+	<div id="loginDiv">
+		Username:<input type="text" id="username-box" style="width: 165px;"/>
+		Password:<input type="password" id="password-box" style="width: 165px;"/>
+		Encryption Password:<input type="password" id="encryption-password-box" style="width: 165px;"/>
+		<input type="button" value="get token" onclick="onToken();"/>
+		<input type="button" value="load" onclick="load();" disabled='true' id="loadButton"/>
+	</div>
+	<div id="dataDiv">
+		<input type="text" id="" style="left: 5%;position: relative;width: 90%;top: 5px;">
+		<table id="dataTable">
+		</table>
+		<button onclick="remove();">Remove</button>
+		<button onclick="add();">Add</button>
+		<button onclick="save();">Save</button>
+		<button onclick="push();">Push to server</button>
+	</div>
+	
+
+	<script src="main.js"></script>
+</body>
+
+</html>
