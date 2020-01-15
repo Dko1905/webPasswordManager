@@ -39,7 +39,7 @@ let code = (function () {
 })();
 
 
-let url = 'https://daniel-password-server.herokuapp.com';
+let url = 'https://password-server.adamstenbaek.dk:7687';
 
 let token = {tokenString: '', experationDate: 0};
 let hastoken = false;
@@ -59,7 +59,7 @@ function getToken(){
 		alert('Got the token.');
 	});
 }
-function setData(data = ''){
+function setData(data){
 	let param = JSON.stringify({tokenString:token.tokenString, experationDate:token.experationDate, data: data});
 	post(url+"/setdata", param, (result)=>{
 		let res = JSON.parse(result);
@@ -67,6 +67,7 @@ function setData(data = ''){
 			alert(`Error in writing to file. (${res.errorMessage})`);
 			return;
 		}
+		console.log(`sent`);
 	});
 }
 function getData(){
@@ -161,6 +162,7 @@ function save(){
 			extra: child.children.item(3).firstChild.value
 		}
 	}
+	console.log('saved');
 }
 
 function add(){
