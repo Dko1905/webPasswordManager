@@ -25,3 +25,8 @@ td {
 	color: white;
 }
 
+#gitHubLogo {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+}
