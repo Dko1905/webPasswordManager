@@ -1,32 +1,19 @@
 body{
-	background-color: beige;
+	background: #007bff;
 }
 
-#loginDiv{
-	width: 200px;
-	height: auto;
-	padding-bottom: 10px;
-	background-color: darkblue;
-	color: white;
-	padding-left: 10px;
-	padding-top: 5px;
-	margin:0 auto;
-	border-radius: 15px;
-}
+.cool-link{
+	text-decoration:none;
 
-#dataDiv{
-	width: 780px;
-	height: auto;
-	background-color: lightblue;
-	border-radius: 10px;
-	margin:0 auto;
-}
-td {
-	color: white;
-}
+	color: black;
+	transition: 0.25s;
 
-#gitHubLogo {
-  position: fixed;
-  bottom: 0;
-  left: 0;
+	font-size: large;
+}
+.cool-link:hover{
+	transition: 0.25s;
+	color: #007bff;
+}
+.cool-link:link{
+	text-decoration:none;
 }
