@@ -312,3 +312,25 @@ function updateSearch(){
 		hide(`acc${val}_li`);
 	});
 }
+function newAccount(){
+	bootbox.prompt({
+		title: 'URL needed',
+		message: 'Please write the url og the accounts website',
+		onEscape: true,
+		closeButton: true, 
+		buttons: {
+			cancel: {
+				labal: 'Cancel',
+				className: 'btn-danger',
+			},
+			confirm: {
+				labal: 'Ok',
+				className: 'btn-success',
+			}
+		},
+		callback: (result)=>{
+			if(result)
+				add(result, '', '', '');
+		}
+	})
+}
