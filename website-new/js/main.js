@@ -104,6 +104,7 @@ function pushToServer(){
 }
 
 function saveAll(){
+	showAll();
 	list = [];
 	let datalist = document.getElementById('dataList');
 	for(let child of datalist.children){
@@ -278,4 +279,36 @@ function OnLogin(){
 	console.log(`username:${username},password:${password}`)
 
 	getToken(username, password);
+}
+
+function showAll(){
+	for(let n = 0; n < list.length; n++){
+		document.getElementById(`acc${n}_li`).classList.remove('d-none');
+	}
+}
+function hide(elmName){
+	document.getElementById(elmName).classList.add('d-none');
+}
+
+function updateSearch(){
+	let search = document.getElementById('serchInput').value;
+	if(search == ''){
+		showAll();
+		return;
+	}
+	showAll();
+	let results = []; // array of numebrs of the elements that should be hidden.
+	let n = 0;
+	for(; n < list.length; n++){
+		let account = list[n];
+		if(account.website.toLowerCase().includes(search.toLowerCase()) || account.username.toLowerCase().includes(search.toLowerCase()) || account.extra.toLowerCase().includes(search.toLowerCase())){
+			
+		}
+		else{
+			results.push(n);
+		}
+	}
+	results.forEach((val)=>{
+		hide(`acc${val}_li`);
+	});
 }
