@@ -282,7 +282,7 @@ function OnLogin(){
 }
 
 function showAll(){
-	for(let n = 0; n < list.length; n++){
+	for(let n = 0; n < document.getElementById('dataList').childElementCount; n++){
 		document.getElementById(`acc${n}_li`).classList.remove('d-none');
 	}
 }
@@ -291,6 +291,7 @@ function hide(elmName){
 }
 
 function updateSearch(){
+	saveAll();
 	let search = document.getElementById('serchInput').value;
 	if(search == ''){
 		showAll();
