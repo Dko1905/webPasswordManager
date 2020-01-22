@@ -183,6 +183,13 @@ function add(website = '', username = '', password = '', extra = ''){
 		let inputgroupappendElm = document.createElement('div');
 		inputgroupappendElm.classList.add('input-group-append');
 
+		let copyButtonElm = document.createElement('button');
+		copyButtonElm.type = 'button';
+		copyButtonElm.classList.add('btn');
+		copyButtonElm.classList.add('btn-primary');
+		copyButtonElm.innerText = 'Copy';
+
+		
 
 		let showbuttonElm = document.createElement('button');
 		showbuttonElm.type = 'button';
@@ -203,7 +210,23 @@ function add(website = '', username = '', password = '', extra = ''){
 			}
 			
 		};
+
+		copyButtonElm.onclick = () => {
+			let temp = document.getElementById(password_id);
+
+			temp.type = 'text';
+
+			temp.select();
+			temp.setSelectionRange(0, 99999);
+
+			document.execCommand("copy");
+
+			temp.type = 'password';
+		}
+
+
 		inputGroupElm.append(inputElm);
+		inputgroupappendElm.append(copyButtonElm);
 		inputgroupappendElm.append(showbuttonElm);
 		inputGroupElm.append(inputgroupappendElm);
 		groupPElm.append(inputGroupElm);
