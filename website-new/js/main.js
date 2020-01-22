@@ -60,6 +60,10 @@ function getToken(username, password){
 			getData();
 			onceLogedin = true;
 		}
+		else{
+			$('#loginModal').modal("toggle");
+			document.getElementById('mainContainer').classList.remove('d-none');
+		}
 	});
 }
 function setData(data){
@@ -335,4 +339,31 @@ function newAccount(){
 				add(result, '', '', '');
 		}
 	})
+}
+
+let shown0 = false;
+let shown1 = false;
+function login_show(num){
+	if(num === 0){
+		let temp = document.getElementById('Password');
+		if(!shown0){
+			temp.type = 'text';
+			shown0 = true;
+		}
+		else{
+			temp.type = 'password';
+			shown0 = false;
+		}
+	}
+	else if(num === 1){
+		let temp = document.getElementById('EncryptionPassword');
+		if(!shown1){
+			temp.type = 'text';
+			shown1 = true;
+		}
+		else{
+			temp.type = 'password';
+			shown1 = false;
+		}
+	}
 }
