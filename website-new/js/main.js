@@ -58,6 +58,7 @@ function getToken(username, password){
 		
 		if(!onceLogedin){
 			getData();
+			onceLogedin = true;
 		}
 	});
 }
